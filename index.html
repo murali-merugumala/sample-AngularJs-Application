@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <h1 style="color:darkred;">MY APP</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="modules/myApp.js"></script>
+    <script src="controllers/appCtrl.js"></script>
+</head>
+<body ng-app="myApp">
+    <div  ng-controller="appCtrl">
+        <!--creating HMTL form with user details-->
+        Name:<br><input type="text" ng-model="Name"><br>
+        DOB:<br><input type="text" ng-model="DOB"><br><br>
+        Gender:<input type="radio" ng-model="Gender" value="male">male
+       <input type="radio" ng-model="Gender" value="female">female<br><br>
+        mailId:<br><input type="email" ng-model="mailId"><br>
+        MobNo:<br><input type="number" ng-model="MobNo"><br>
+        <button ng-click="add()" ng-bind="button_name"></button><br>
+        Search:<input type="text" ng-model="user.Name">
+        <style>
+            table, th, td {
+           /*settng bordier to the table contents*/
+                border: 1px solid grey;
+            }
+            /*giving alternate rows a different color*/
+            tr:nth-child(even){background-color: lightblue}
+            /*setting different color to thead table head*/
+            th {
+            background-color: palevioletred;
+            color: white;
+            }
+             </style>
+            
+        <!--creating table of contents-->
+        <table>      
+            <thead>
+            <th>Index </th>
+            <th> Name </th>
+            <th> DOB </th>
+            <th> Gender </th>
+            <th> mailId </th>
+            <th> MobNo </th>
+        <!--    <th> Gender </th>-->
+            </thead>
+            <tbody>
+        <!--repeating the content inputs and buttons to each table-row-->
+        <!--'filter' is used to filter the 'search' contents-->
+                <tr ng-repeat="user in list|filter : user">
+                    <td>{{$index+1}}</td>
+                    <td> {{user.Name}}</td>
+                    <td>{{user.DOB}}</td>
+                    <td>{{user.Gender}}</td>
+                    <td> {{user.mailId}} </td>
+                    <td>{{user.MobNo}}</td>
+                    <!--creating buttons and assigning functionalities to them-->
+                    <td> <button ng-click="edit(user)">Edit</button></td>
+                    <td> <button ng-click="delete(user)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
