@@ -1,4 +1,4 @@
-//******PURPOSE: this is used to control the application data
+//******PURPOSE: this is used to control the application form details
 //*******CREATED BY: Murali M
 //*******CREATED DATE: 12/19/2017
 
