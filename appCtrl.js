@@ -1,5 +1,4 @@
-//******PURPOSE: this is used to store the person details entered in a form, in table.
-
+//******PURPOSE: this is used to display the person details entered in form as table.
 
 //defining the'controller' to control the application data
 app.controller('appCtrl',function($scope){
