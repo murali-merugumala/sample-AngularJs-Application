@@ -1,6 +1,5 @@
-//******PURPOSE: this is used to control the application form details
-//*******CREATED BY: Murali M
-//*******CREATED DATE: 12/19/2017
+//******PURPOSE: this is used to store the person details entered in a form, in table.
+
 
 //defining the'controller' to control the application data
 app.controller('appCtrl',function($scope){
